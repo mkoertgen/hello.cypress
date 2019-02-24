@@ -11,7 +11,9 @@ services:
     # here's why cypress does not come pre-baked into docker images:
     # - https://github.com/cypress-io/cypress-docker-images/issues/41
     image: cypress/browsers:chrome69
+    depends_on: ['my-app']
 
   cypress-preinstalled:
     image: morlack/cypress-ci-preinstalled
+    depends_on: ['my-app']
 
