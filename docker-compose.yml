@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  my-app:
+    build:
+      context: ./my-app
+    ports:
+      - 8080:80
+
+  cypress:
+    # here's why cypress does not come pre-baked into docker images:
+    # - https://github.com/cypress-io/cypress-docker-images/issues/41
+    image: cypress/browsers:chrome69
+
+  cypress-preinstalled:
+    image: morlack/cypress-ci-preinstalled
+
