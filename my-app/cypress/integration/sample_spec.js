@@ -1,5 +1,6 @@
-describe('My First Test', () => {
-  it('Does not do much!', () => {
-    expect(true).to.equal(false)
-  })
-})
+describe('App loads', () => {
+  it('shows React welcome message', () => {
+    cy.visit('/');
+    cy.contains('Learn React');
+  });
+});
