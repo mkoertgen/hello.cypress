@@ -1,4 +1,4 @@
-version: '3'
+version: "3.7"
 
 services:
   my-app:
@@ -6,30 +6,3 @@ services:
       context: ./my-app
     ports:
       - 8080:80
-
-  cypress-cached:
-    # here's why cypress does not come pre-baked into docker images:
-    # - https://github.com/cypress-io/cypress-docker-images/issues/41
-    image: cypress/browsers:chrome69
-    depends_on: ['my-app']
-    volumes:
-      - cypress_cache:/root/.cache/
-      - ./my-app/cypress/:/app/cypress/
-      - ./my-app/cypress.json:/app/cypress.json
-    working_dir: /app
-    environment:
-      CYPRESS_baseUrl: http://my-app
-    command: bash -c 'npm i -g cypress && cypress run'
-
-  cypress-preinstalled:
-    image: morlack/cypress-ci-preinstalled
-    depends_on: ['my-app']
-    volumes:
-      - ./my-app/cypress/:/opt/cypress/cypress/
-      - ./my-app/cypress.json:/opt/cypress/cypress.json
-    environment:
-      CYPRESS_baseUrl: http://my-app
-    command: npx cypress run
-
-volumes:
-  cypress_cache:

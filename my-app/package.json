@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3",
-    "react-scripts": "2.1.5"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -24,9 +24,9 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "cypress": "^3.1.5",
-    "eslint": "^5.14.1",
-    "eslint-plugin-cypress": "^2.2.1",
-    "eslint-plugin-react": "^7.12.4"
+    "cypress": "^4.2.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-cypress": "^2.10.3",
+    "eslint-plugin-react": "^7.19.0"
   }
 }
