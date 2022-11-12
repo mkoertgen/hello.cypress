@@ -4,26 +4,39 @@ A blueprint getting started with [Cypress.io](https://www.cypress.io/)
 
 ## My-App
 
-A sample React App.
+A sample React App, bootstrapped with [Create React App (TypeScript)](https://create-react-app.dev/docs/adding-typescript/#installation)
 
-```console
-cy my-app
-npm install
-npx cy:run
+```shell
+$ cd my-app
+$ npm install
+# Run the app -> http://localhost:3000
+$ npm start
+
+# In another terminal, run e2e-tests
+$ npm run test:e2e
+...
+       Spec                                              Tests  Passing  Failing  Pending  Skipped
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ √  sample-spec.cy.js                        479ms        1        1        -        -        - │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+    √  All specs passed!                        479ms        1        1        -        -        -
 ```
 
-## Cypress (Cached)
+## Cypress
 
-A container using a global installation of cypress (cached in a docker volume after 1st run)
+A container executing e2e-tests suitable for a CI/CD pipeline.
 
-```console
-docker-compose run --rm cypress-cached
+```shell
+docker-compose run --rm cypress
 ```
 
-## Cypress (preinstalled)
+## References
 
-A container using a preinstalled, global installation of cypress (Cypress 3.0.2 as of now)
+- [Cypress.io](https://www.cypress.io/)
+- [Cypress.io - Docker](https://docs.cypress.io/guides/guides/continuous-integration.html#Docker)
+- [Cypress.io - Command Line](https://docs.cypress.io/guides/guides/command-line)
 
-```console
-docker-compose run --rm cypress-preinstalled
-```
+### Alternatives
+
+- [TestCafe](https://devexpress.github.io/testcafe/)
+- [TestCafe vs Cypress: Core Differences](https://www.browserstack.com/guide/testcafe-vs-cypress)

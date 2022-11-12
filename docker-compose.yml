@@ -6,3 +6,13 @@ services:
       context: ./my-app
     ports:
       - 8080:80
+
+  cypress:
+    image: cypress/included:11.0.1
+    volumes:
+     - ./my-app/cypress/:/app/cypress/
+     - ./my-app/cypress.config.js:/app/cypress.config.js
+    working_dir: /app
+    environment:
+      CYPRESS_baseUrl: http://my-app
+    command: cypress run --browser chrome --headless --spec "cypress/e2e/0-my-app/**/*.cy.js"
